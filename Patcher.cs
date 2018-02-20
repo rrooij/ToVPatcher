@@ -43,7 +43,7 @@ namespace ToVPatcher {
 			Logger.LogFileData( original, "xdelta, infile" );
 			Logger.LogFileData( patch, "xdelta, patch" );
 			try {
-				if ( !Util.RunProgram( "xdelta", "-d -f -s \"" + original + "\" \"" + patch + "\" \"" + patched + "\"", false, false, true ) ) {
+				if ( !Util.RunProgram( "xdelta3", "-d -f -s \"" + original + "\" \"" + patch + "\" \"" + patched + "\"", false, false, true ) ) {
 					throw new PatchingException( "Patching failed: " + patch );
 				}
 			} catch ( Win32Exception e ) {

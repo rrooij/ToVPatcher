@@ -46,7 +46,7 @@ namespace ToVPatcher {
 				return;
 			}
 
-			if ( !CheckForExecutable( "comptoe" ) || !CheckForExecutable( "xdelta" ) ) {
+			if ( !CheckForExecutable( "comptoe" ) || (Util.isRunningOnWindows() && !CheckForExecutable( "xdelta3") ) ) {
 				Close();
 				return;
 			}
