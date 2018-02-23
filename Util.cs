@@ -515,5 +515,19 @@ namespace HyoutaTools {
 
 			return files;
 		}
+
+		/// <summary>
+		/// Checks if running on Windows
+		/// </summary>
+		/// <returns><c>true</c>, if running on windows <c>false</c> otherwise.</returns>
+		public static bool isRunningOnWindows() {
+			OperatingSystem os = Environment.OSVersion;
+			PlatformID pid = os.Platform;
+
+			if (pid == PlatformID.Unix || pid == PlatformID.MacOSX) {
+				return false;
+			}
+			return true;
+		}
 	}
 }
