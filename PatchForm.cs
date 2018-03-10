@@ -57,7 +57,7 @@ namespace ToVPatcher {
 			}
 
 			string ebootModPath = Path.GetFullPath( "ebootmod/ebootMOD.exe" );
-			string makeSelfPath = Path.GetFullPath( "eboot_tools/makeself" );
+			string selfRebuilderPath = Path.GetFullPath( "eboot_tools/self_rebuilder" );
 			string unSelfPath = Path.GetFullPath ("eboot_tools/unself");
 			string warningMessage = "{0} could not be found at {1}" + "." + Environment.NewLine +
 				"{0} is required to patch EBOOT.BIN. Please read the readme, find a copy of {0}, and place it at the appropriate location." + Environment.NewLine +
@@ -67,10 +67,10 @@ namespace ToVPatcher {
 					String.Format(warningMessage, "ebootMOD", ebootModPath),
 					"ebootMOD not found!", MessageBoxButtons.OK, MessageBoxIcon.Warning
 				);
-			} else if ( (!File.Exists (makeSelfPath) || !File.Exists (unSelfPath) ) && !Util.isRunningOnWindows()) {
+			} else if ( (!File.Exists (selfRebuilderPath) || !File.Exists (unSelfPath) ) && !Util.isRunningOnWindows()) {
 				MessageBox.Show (this,
-					String.Format(warningMessage, "makeself and unself", makeSelfPath),
-					"makeSelf and unself not found!", MessageBoxButtons.OK, MessageBoxIcon.Warning
+					String.Format(warningMessage, "self_rebuilder and unself", selfRebuilderPath),
+					"self_rebuilder and unself not found!", MessageBoxButtons.OK, MessageBoxIcon.Warning
 				);
 			}
 
