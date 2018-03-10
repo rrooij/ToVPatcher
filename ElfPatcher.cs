@@ -10,7 +10,7 @@ namespace ToVPatcher {
 	class ElfPatcher {
 		public static void PatchElf( string ebootPath, string patchDir, string outDir, string outMd5 = null, BackgroundWorker worker = null ) {
 			
-			string patcherPath = "failOverflowTools/unself";
+			string patcherPath = "eboot_tools/unself";
 			if (Util.isRunningOnWindows()) {
 				patcherPath = Path.GetFullPath ("ebootmod/ebootMOD.exe");
 			}
@@ -58,7 +58,7 @@ namespace ToVPatcher {
 			if ( worker != null ) { worker.ReportProgress( 0, "Encrypting..." ); }
 			string outPath = Path.Combine( outDir, "EBOOT.BIN" );
 			if (!Util.isRunningOnWindows()) {
-				RunElfPatcher (Path.GetFullPath ("failOverflowTools/makeself"), "", patchedElf, outPath);
+				RunElfPatcher (Path.GetFullPath ("eboot_tools/makeself"), "", patchedElf, outPath);
 			} else {
 				RunElfPatcher (patcherPath, ebootPath, patchedElf, outPath);
 			}

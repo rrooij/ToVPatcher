@@ -24,7 +24,7 @@ namespace ToVPatcher {
 		bool CheckForExecutable( string file ) {
 			if ( !File.Exists( file ) && !File.Exists( file + ".exe" ) ) {
 				MessageBox.Show( this,
-					file + " could not be found at " + Path.GetFullPath( file + ".exe" ) + "." + Environment.NewLine +
+					file + " could not be found at " + Path.GetFullPath( file + Util.exeSuffix ) + "." + Environment.NewLine +
 					"Please make sure the archive containing ToVPatcher was fully extracted and no files were moved or renamed, then run the patcher again.",
 					file + " found!", MessageBoxButtons.OK, MessageBoxIcon.Error
 				);
@@ -57,8 +57,8 @@ namespace ToVPatcher {
 			}
 
 			string ebootModPath = Path.GetFullPath( "ebootmod/ebootMOD.exe" );
-			string makeSelfPath = Path.GetFullPath( "failOverflowTools/makeself" );
-			string unSelfPath = Path.GetFullPath ("failOverflowTools/unself");
+			string makeSelfPath = Path.GetFullPath( "eboot_tools/makeself" );
+			string unSelfPath = Path.GetFullPath ("eboot_tools/unself");
 			string warningMessage = "{0} could not be found at {1}" + "." + Environment.NewLine +
 				"{0} is required to patch EBOOT.BIN. Please read the readme, find a copy of {0}, and place it at the appropriate location." + Environment.NewLine +
 			                        "The patcher will still run, but will not be able to patch EBOOT.BIN until you do so.";

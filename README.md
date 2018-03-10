@@ -80,7 +80,7 @@ Instructions
 
 * Acquire makeself and unself (Linux and OS X only)
 
-  The failOverflow tools to de- and encrypt are found [here](https://github.com/eltair/fail0verflow). Create a folder called "failOverflowTools"
+  The failOverflow tools to de- and encrypt are found [here](https://github.com/eltair/fail0verflow). Create a folder called "eboot_tools"
   in the path of the ToVPatcher.exe binary and copy the makeself and unself binaries there.
 
   You should acquire the encryption and decryption keys for somewhere. They can't be provided with this program due to legal reasons. You should
