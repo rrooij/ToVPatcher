@@ -78,10 +78,10 @@ Instructions
   
   I have tested this with the ebootMOD executable last modified on March 31st, 2011, but other versions may work as well.
 
-* Acquire makeself and unself (Linux and OS X only)
+* Acquire self_rebuilder and unself (Linux and OS X only)
 
-  The failOverflow tools to de- and encrypt are found [here](https://github.com/eltair/fail0verflow). Create a folder called "eboot_tools"
-  in the path of the ToVPatcher.exe binary and copy the makeself and unself binaries there.
+  The failOverflow tools to de- and encrypt are found [here](https://github.com/Evilnat/ps3tools-master_3.XX-4.XX). Create a folder called "eboot_tools"
+  in the path of the ToVPatcher.exe binary and copy the self\_rebuilder and unself binaries there.
 
   You should acquire the encryption and decryption keys for somewhere. They can't be provided with this program due to legal reasons. You should
   place the keys in a folder called ".ps3" in your home directory.

@@ -58,7 +58,7 @@ namespace ToVPatcher {
 			if ( worker != null ) { worker.ReportProgress( 0, "Encrypting..." ); }
 			string outPath = Path.Combine( outDir, "EBOOT.BIN" );
 			if (!Util.isRunningOnWindows()) {
-				RunElfPatcher (Path.GetFullPath ("eboot_tools/makeself"), "", patchedElf, outPath);
+				RunElfPatcher (Path.GetFullPath ("eboot_tools/self_rebuilder"), ebootPath, patchedElf, outPath);
 			} else {
 				RunElfPatcher (patcherPath, ebootPath, patchedElf, outPath);
 			}
@@ -69,9 +69,8 @@ namespace ToVPatcher {
 
 			try {
 				if (!Util.isRunningOnWindows()) {
-					if (!Util.RunProgram( ebootMod, " app 355 3.55.0 01000002 10100000_01000003 0001:retail "
-						+ modifiedElf + " " + modifiedEboot, false, false, true )) {
-						throw new PatchingException("makeself failed");
+					if (!Util.RunProgram( ebootMod, modifiedElf + " " + modifiedEboot + " " + originalEboot, false, false, true )) {
+						throw new PatchingException("self_rebuilder failed");
 					}
 				}
 				else {
