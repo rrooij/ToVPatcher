@@ -6,6 +6,7 @@ using System.IO;
 
 namespace HyoutaTools {
 	public static class Util {
+	        public static string exeSuffix = "";
 
 		#region SwapEndian
 		public static Int16 SwapEndian( this Int16 x ) {
