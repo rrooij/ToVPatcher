@@ -58,7 +58,7 @@ namespace ToVPatcher {
 			if ( worker != null ) { worker.ReportProgress( 0, "Encrypting..." ); }
 			string outPath = Path.Combine( outDir, "EBOOT.BIN" );
 			if (!Util.isRunningOnWindows()) {
-				RunElfPatcher (Path.GetFullPath ("eboot_tools/self_rebuilder"), ebootPath, patchedElf, outPath);
+				RunElfPatcher (Path.GetFullPath ("PS3Py/fself.py"), ebootPath, patchedElf, outPath);
 			} else {
 				RunElfPatcher (patcherPath, ebootPath, patchedElf, outPath);
 			}
@@ -69,7 +69,8 @@ namespace ToVPatcher {
 
 			try {
 				if (!Util.isRunningOnWindows()) {
-					if (!Util.RunProgram( ebootMod, modifiedElf + " " + modifiedEboot + " " + originalEboot, false, false, true )) {
+                                        Console.WriteLine(ebootMod + " " +  modifiedElf + " " + modifiedEboot);
+					if (!Util.RunProgram( ebootMod, modifiedElf + " " + modifiedEboot, false, false, true )) {
 						throw new PatchingException("self_rebuilder failed");
 					}
 				}
